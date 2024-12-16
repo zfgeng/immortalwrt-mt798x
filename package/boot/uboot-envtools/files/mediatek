@@ -47,6 +47,9 @@ nradio,wt9103 |\
 *konka,komi-a31*)
 	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x20000" "0x80000" "1"
 	;;
+tenbay,wr3000k-gsw-emmc-nor)
+	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x80000" "0x10000"
+	;;
 zyxel,ex5700)
 	ubootenv_add_uci_config "/dev/mtd2" "0x0" "0x4000" "0x80000" "1"
 	;;

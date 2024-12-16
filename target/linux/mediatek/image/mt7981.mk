@@ -375,6 +375,19 @@ define Device/ruijie_rg-x30e-pro
 endef
 TARGET_DEVICES += ruijie_rg-x30e-pro
 
+define Device/tenbay_wr3000k-gsw-emmc-nor
+  DEVICE_VENDOR := Tenbay
+  DEVICE_MODEL := wr3000k-gsw-emmc-nor
+  DEVICE_DTS := mt7981-tenbay-wr3000k-gsw-emmc-nor
+  SUPPORTED_DEVICES := tenbay,wr3000k-gsw-emmc-nor
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  DEVICE_PACKAGES := mkf2fs e2fsprogs blkid blockdev losetup kmod-fs-ext4 \
+		     kmod-mmc kmod-fs-f2fs kmod-fs-vfat kmod-nls-cp437 \
+		     kmod-nls-iso8859-1 luci-app-samba4 f2fsck gdisk
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += tenbay_wr3000k-gsw-emmc-nor
+
 define Device/xiaomi_mi-router-wr30u-stock
   DEVICE_VENDOR := Xiaomi
   DEVICE_MODEL := Mi Router WR30U (stock layout)
