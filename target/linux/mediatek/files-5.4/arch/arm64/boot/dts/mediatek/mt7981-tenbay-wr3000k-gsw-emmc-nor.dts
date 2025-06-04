@@ -109,7 +109,7 @@
 
 &gsw {
 	mediatek,mdio = <&mdio>;
-	mediatek,portmap = "wllll";
+	mediatek,portmap = "llllw";
 	mediatek,mdio_master_pinmux = <0>;
 	reset-gpios = <&pio 39 0>;
 	interrupt-parent = <&pio>;

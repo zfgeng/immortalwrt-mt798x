@@ -766,6 +766,7 @@ setup_model()
 	nradio,wt9103 |\
 	ruijie,rg-x30e* |\
 	tenbay,wr3000k-gsw-emmc-nor |\
+	zbtlink,z8107ax* |\
 	*7981*)
 		MT7981_whnat $num_of_wifi $usbnet
 		;;

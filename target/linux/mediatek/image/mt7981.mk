@@ -654,6 +654,36 @@ define Device/cmcc_xr30-emmc
 endef
 TARGET_DEVICES += cmcc_xr30-emmc
 
+define Device/zbtlink_z8107ax-emmc
+  DEVICE_VENDOR := ZBTLINK
+  DEVICE_MODEL := Z8107AX eMMC
+  DEVICE_DTS := mt7981-zbtlink-z8107ax-emmc
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := zbtlink,z8107ax-emmc
+  DEVICE_PACKAGES := $(MT7981_USB_PKGS) f2fsck losetup mkf2fs kmod-fs-f2fs kmod-mmc \
+	luci-app-samba4
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += zbtlink_z8107ax-emmc
+
+define Device/zbtlink_z8107ax
+  DEVICE_VENDOR := ZBTLINK
+  DEVICE_MODEL := Z8107AX
+  DEVICE_DTS := mt7981-zbtlink-z8107ax
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  DEVICE_PACKAGES := $(MT7981_USB_PKGS) luci-app-ksmbd luci-i18n-ksmbd-zh-cn ksmbd-utils
+  SUPPORTED_DEVICES := zbtlink,z8107ax
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 116736k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += zbtlink_z8107ax
+
 define Device/h3c_nx30pro
   DEVICE_VENDOR := H3C
   DEVICE_MODEL := NX30PRO

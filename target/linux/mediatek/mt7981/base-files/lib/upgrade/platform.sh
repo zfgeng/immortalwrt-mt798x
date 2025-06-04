@@ -214,12 +214,14 @@ platform_do_upgrade() {
 	*nokia,ea0326gmp* |\
 	*newland,nl-wr8103* |\
 	newland,nl-wr9103 |\
+	zbtlink,z8107ax |\
 	*snand*)
 		nand_do_upgrade "$1"
 		;;
 	cmcc,rax3000m-emmc |\
 	cmcc,xr30-emmc |\
 	tenbay,wr3000k-gsw-emmc-nor |\
+	zbtlink,z8107ax-emmc |\
 	*emmc*)
 		CI_KERNPART="kernel"
 		CI_ROOTPART="rootfs"
@@ -271,6 +273,7 @@ platform_check_image() {
 	newland,nl-wr9103 |\
 	nradio,wt9103 |\
 	tenbay,wr3000k-gsw-emmc-nor |\
+	zbtlink,z8107ax* |\
 	*snand* |\
 	*emmc* |\
 	routerich,ax3000)
