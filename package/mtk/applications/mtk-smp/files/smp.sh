@@ -765,6 +765,7 @@ setup_model()
 	newland,nl-wr9103 |\
 	nradio,wt9103 |\
 	ruijie,rg-x30e* |\
+ 	ruijie,rg-ew3000gx* |\
 	tenbay,wr3000k-gsw-emmc-nor |\
 	zbtlink,z8107ax* |\
 	*7981*)
