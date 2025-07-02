@@ -97,6 +97,11 @@ mediatek_setup_interfaces()
 	ruijie,rg-x30e*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" wan
 		;;
+	ruijie,rg-ew3000gx-pro)
+		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+		ucidef_add_switch "switch0" \
+			"1:lan" "2:lan" "4:lan" "0:wan" "6u@eth0" "5u@eth1"
+		;;
 	zbtlink,z8107ax*)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" \
@@ -284,6 +289,7 @@ mediatek_setup_macs()
 		wan_mac=$(mtd_get_mac_binary $part_name 0x10048)
 		lan_mac=$(macaddr_add $wan_mac 1)
 		;;
+	ruijie,rg-ew3000gx* |\
 	ruijie,rg-x30e*)
 		label_mac=$(mtd_get_mac_ascii product_info ethaddr)
 		wan_mac=$label_mac
