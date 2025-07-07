@@ -217,7 +217,6 @@
 &wbsys {
 	status = "okay";
 	mediatek,mtd-eeprom = <&Factory 0x0000>;
-	pinctrl-names = "default", "dbdc";
 };
 
 &spi0 {
