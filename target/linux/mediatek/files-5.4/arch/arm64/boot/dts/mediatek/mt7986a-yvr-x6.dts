@@ -214,11 +214,6 @@
 	status = "okay";
 };
 
-&wbsys {
-	status = "okay";
-	mediatek,mtd-eeprom = <&Factory 0x0000>;
-};
-
 &spi0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&spi_flash_pins>;
@@ -293,6 +288,13 @@
 			drive-strength = <MTK_DRIVE_4mA>;
 		};
 	};
+};
+
+&wbsys {
+	status = "okay";
+	pinctrl-names = "default", "dbdc";
+	pinctrl-0 = <&wf_2g_5g_pins>;
+	pinctrl-1 = <&wf_dbdc_pins>;
 };
 
 &i2c0 {
