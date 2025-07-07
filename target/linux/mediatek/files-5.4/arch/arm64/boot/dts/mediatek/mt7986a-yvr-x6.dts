@@ -55,7 +55,7 @@
 			label = "blue:status";
 			gpios = <&pio 21 GPIO_ACTIVE_HIGH>;
 		};
-		led_status_greed: status_green {
+		led_status_green: status_green {
 			label = "green:status";
 			gpios = <&pio 22 GPIO_ACTIVE_HIGH>;
 		};
