@@ -84,7 +84,7 @@
 				reg = <0x100000 0x80000>;
 			};
 
-			partition@180000 {
+			factory: partition@180000 {
 				label = "Factory";
 				reg = <0x180000 0x100000>;
 			};
@@ -291,6 +291,7 @@
 };
 
 &wbsys {
+	mediatek,mtd-eeprom = <&factory 0x0000>;
 	status = "okay";
 	pinctrl-names = "default", "dbdc";
 	pinctrl-0 = <&wf_2g_5g_pins>;
