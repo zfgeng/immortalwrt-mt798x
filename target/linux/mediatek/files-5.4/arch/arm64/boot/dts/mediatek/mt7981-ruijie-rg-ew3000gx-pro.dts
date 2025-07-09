@@ -10,7 +10,7 @@
 #include "mt7981.dtsi"
 
 / {
-	model = "Ruijie RG-EW3000GX Pro";
+	model = "Ruijie RG-EW3000GX Pro (nand mod)";
 	compatible = "ruijie,rg-ew3000gx-pro", "mediatek,mt7981";
 
 	chosen {
