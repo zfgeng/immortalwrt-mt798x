@@ -281,7 +281,7 @@ TARGET_DEVICES += mt7981-clt-r30b1-112M
 
 define Device/ruijie_rg-ew3000gx-pro
   DEVICE_VENDOR := Ruijie
-  DEVICE_MODEL := Ruijie RG-EW3000GX PRO
+  DEVICE_MODEL := Ruijie RG-EW3000GX PRO (nand mod)
   DEVICE_DTS := mt7981-ruijie-rg-ew3000gx-pro
   DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
   UBINIZE_OPTS := -E 5
