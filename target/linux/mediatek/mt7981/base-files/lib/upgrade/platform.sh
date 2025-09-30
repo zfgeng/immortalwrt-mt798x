@@ -208,6 +208,7 @@ platform_do_upgrade() {
 	cmcc,a10 |\
 	cmcc,rax3000m |\
 	cmcc,xr30 |\
+	comfast,cf-wr632ax |\
 	h3c,nx30pro |\
 	*honor,fur-602* |\
 	*konka,komi-a31* |\
@@ -267,6 +268,7 @@ platform_check_image() {
 	cmcc,a10 |\
 	cmcc,rax3000m* |\
 	cmcc,xr30* |\
+	comfast,cf-wr632ax |\
 	h3c,nx30pro |\
 	*honor,fur-602* |\
 	*konka,komi-a31* |\
