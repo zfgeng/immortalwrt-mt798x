@@ -255,7 +255,3 @@
  	vusb33-supply = <&reg_3p3v>;
 	status = "okay";
 };
-
-&usb_phy {
-	status = "okay";
-};
