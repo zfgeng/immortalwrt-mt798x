@@ -767,6 +767,7 @@ setup_model()
 	nradio,wt9103 |\
 	ruijie,rg-x30e* |\
  	ruijie,rg-ew3000gx* |\
+	comfast,cf-wr632ax |\
 	tenbay,wr3000k-gsw-emmc-nor |\
 	zbtlink,z8107ax* |\
 	*7981*)
