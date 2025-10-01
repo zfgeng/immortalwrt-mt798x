@@ -37,17 +37,17 @@
 	gpio-leds {
 			compatible = "gpio-leds";
 
-				wifi_blue: led-0 {
+				wifi_blue: led@0 {
 					label = "comfast:blue:led";
 					gpios = <&pio 8 GPIO_ACTIVE_HIGH>;
 				};
 
-				lan_green: led-1 {
+				lan_green: led@1 {
 					label = "comfast:green:led";
 					gpios = <&pio 35 GPIO_ACTIVE_HIGH>;
 				};
 
-				wan_red: led-2 {
+				wan_red: led@2 {
 					label = "comfast:red:led";
 					gpios = <&pio 34 GPIO_ACTIVE_HIGH>;
 				};
@@ -104,15 +104,6 @@
 		pwms = <&pwm 0 10000>;
 		status = "okay";
 	};
-	
-	reg_3p3v: regulator-3p3v {
-		compatible = "regulator-fixed";
-		regulator-name = "fixed-3.3V";
-		regulator-min-microvolt = <3300000>;
-		regulator-max-microvolt = <3300000>;
-		regulator-boot-on;
-		regulator-always-on;
-	};
 };
 
 &uart0 {
@@ -121,7 +112,7 @@
 
 &pwm {
 	pinctrl-names = "default";
-	pinctrl-0 = <&pwm0_pins>;
+	pinctrl-0 = <&pwm0_pin>;
 
 	status = "okay";
 };
@@ -252,6 +243,8 @@
 };
 
 &xhci {
- 	vusb33-supply = <&reg_3p3v>;
+	mediatek,u3p-dis-msk = <0x0>;
+	phys = <&u2port0 PHY_TYPE_USB2>,
+	       <&u3port0 PHY_TYPE_USB3>;
 	status = "okay";
 };
