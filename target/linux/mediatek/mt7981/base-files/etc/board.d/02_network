@@ -271,7 +271,7 @@ mediatek_setup_macs()
 		fi
 		;;
 	comfast,cf-wr632ax)
-		label_mac=$(mtd_get_mac_binary $part_name 0xE0000)
+		label_mac=$(mtd_get_mac_binary $part_name 0xE000)
 		lan_mac=$label_mac
 		wan_mac=$(macaddr_add "$label_mac" 1)
 		local wifi_mac="$(mtd_get_mac_binary $part_name 0x04)"
